@@ -1,0 +1,10 @@
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+*:Zone.Identifier
+
+# Temp & Secrets
+.env
+.env.local
+*.log
