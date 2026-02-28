@@ -1,0 +1,23 @@
+services:
+  rancher:
+    image: rancher/rancher:v2.8.5
+    container_name: rancher
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "4467:80"
+      - "4468:443"
+    volumes:
+      - rancher_data:/var/lib/rancher
+    environment:
+      - CATTLE_SYSTEM_DEFAULT_REGISTRY=
+    networks:
+      - rancher_net
+
+volumes:
+  rancher_data:
+    driver: local
+
+networks:
+  rancher_net:
+    driver: bridge
